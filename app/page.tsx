@@ -405,7 +405,7 @@ const projects: Project[] = [
     tag: 'AUTOMATISERING',
     title: 'Automatiseret Rapportering',
     desc: 'Jeg har transformeret tung manuel rapportering fra en proces på 2-5 dage pr. land til et fuldt automatiseret setup på tværs af 7 forskellige lande. Data flyder nu direkte ind i beslutningsgrundlaget uden forsinkelse.',
-    link: null,
+
     image: '/q-report.gif',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -419,7 +419,7 @@ const projects: Project[] = [
     tag: 'SALES INTELLIGENCE',
     title: 'Lead Enrichment Tool',
     desc: 'Udvikling af et værktøj, hvor indtastning af et firmanavn automatisk genererer en dybdegående rapport inkl. LinkedIn-profiler og strategiske indsigter. Dette bruges aktivt af 7 sælgere til at personliggøre deres outreach.',
-    link: null,
+
     image: '/lead%20enrichment.png',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -435,7 +435,7 @@ const projects: Project[] = [
     tag: 'AI WORKFLOW',
     title: 'AI Katalogproduktion',
     desc: 'Ved at udnytte Claude og Claude Code har jeg reduceret produktionstiden for komplette produktkataloger fra flere måneder til under 30 minutter. En revolutionerende optimering af det kreative indholdsarbejde.',
-    link: null,
+
     image: '/catalog.gif',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
