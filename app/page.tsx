@@ -209,13 +209,13 @@ export default function CVPage() {
               style={{ background: '#FFF8F2', border: '1px solid #F3E8D8' }}
             >
               {'image' in p && p.image && (
-                <div className="w-full overflow-hidden rounded-t-3xl" style={{ maxHeight: '220px', background: '#111' }}>
-                  <img src={p.image} alt={p.title} className="w-full object-cover object-top" style={{ maxHeight: '220px' }} />
+                <div className="w-full overflow-hidden rounded-t-3xl" style={{ maxHeight: '220px', background: '#FFF3E0' }}>
+                  <img src={p.image} alt={p.title} className="w-full object-cover object-top" style={{ maxHeight: '220px', display: 'block' }} />
                 </div>
               )}
               {'video' in p && p.video && (
-                <div className="w-full overflow-hidden rounded-t-3xl" style={{ maxHeight: '220px', background: '#111' }}>
-                  <video autoPlay loop muted playsInline className="w-full object-cover object-top" style={{ maxHeight: '220px' }}>
+                <div className="w-full overflow-hidden rounded-t-3xl" style={{ background: '#FFF3E0' }}>
+                  <video controls playsInline className="w-full" style={{ display: 'block', maxHeight: '220px' }}>
                     <source src={p.video} type="video/mp4" />
                   </video>
                 </div>
