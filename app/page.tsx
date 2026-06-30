@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 
 // Thread path: starts at yarn ball (right), sweeps to text (left), drops to next section, repeats
 // Coordinates map to viewBox 1200×5500 which covers the full page height
@@ -32,27 +31,27 @@ const THREAD_PATH = `
 const THREAD_LENGTH = 6500
 
 export default function CVPage() {
-  const threadRef = useRef<SVGPathElement>(null)
-  const glowRef = useRef<SVGPathElement>(null)
-
-  useEffect(() => {
-    const update = (progress: number) => {
-      const offset = THREAD_LENGTH * (1 - progress)
-      if (threadRef.current) threadRef.current.style.strokeDashoffset = String(offset)
-      if (glowRef.current) glowRef.current.style.strokeDashoffset = String(offset)
-    }
-    update(0.04)
-    const handleScroll = () => {
-      const scrolled = window.scrollY
-      const total = document.body.scrollHeight - window.innerHeight
-      update(Math.min(scrolled / total, 1))
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <div className="relative min-h-screen font-sans" style={{ background: '#FFF8F2', color: '#1a1a1a' }}>
+      <style>{`
+        @keyframes draw-thread {
+          from { stroke-dashoffset: ${THREAD_LENGTH}; }
+          to   { stroke-dashoffset: 0; }
+        }
+        .thread-draw {
+          stroke-dasharray: ${THREAD_LENGTH};
+          stroke-dashoffset: ${THREAD_LENGTH};
+          animation: draw-thread 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 0.3s;
+        }
+        .thread-glow {
+          stroke-dasharray: ${THREAD_LENGTH};
+          stroke-dashoffset: ${THREAD_LENGTH};
+          animation: draw-thread 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 0.3s;
+        }
+      `}</style>
+
       {/* SVG Thread — absolute, scrolls with the page */}
       <svg
         aria-hidden="true"
@@ -61,32 +60,27 @@ export default function CVPage() {
         viewBox="0 0 1200 5500"
         preserveAspectRatio="xMidYMin meet"
       >
-        {/* Glow / shadow */}
+        {/* Glow */}
         <path
-          ref={glowRef}
+          className="thread-glow"
           d={THREAD_PATH}
           fill="none"
           stroke="#F59E0B"
           strokeWidth="14"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeDasharray={THREAD_LENGTH}
-          strokeDashoffset={THREAD_LENGTH}
-          opacity="0.15"
+          opacity="0.18"
         />
         {/* Main thread */}
         <path
-          ref={threadRef}
+          className="thread-draw"
           d={THREAD_PATH}
           fill="none"
           stroke="#F59E0B"
-          strokeWidth="4"
+          strokeWidth="4.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeDasharray={THREAD_LENGTH}
-          strokeDashoffset={THREAD_LENGTH}
-          opacity="0.85"
-          style={{ transition: 'stroke-dashoffset 0.05s linear' }}
+          opacity="0.9"
         />
       </svg>
 
