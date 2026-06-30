@@ -418,7 +418,7 @@ const projects = [
     title: 'Lead Enrichment Tool',
     desc: 'Udvikling af et værktøj, hvor indtastning af et firmanavn automatisk genererer en dybdegående rapport inkl. LinkedIn-profiler og strategiske indsigter. Dette bruges aktivt af 7 sælgere til at personliggøre deres outreach.',
     link: null,
-    video: '/lead enrichment.mp4',
+    video: '/lead%20enrichment.mp4',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <circle cx="12" cy="11" r="5" stroke="#F59E0B" strokeWidth="2" />
