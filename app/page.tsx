@@ -232,13 +232,13 @@ export default function CVPage() {
                 )}
                 <h3 className="text-xl font-bold" style={{ color: '#1a1a1a' }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed flex-1" style={{ color: '#666' }}>{p.desc}</p>
-                {p.link && (
+                {'link' in p && p.link && (
                   <a
-                    href={p.link.href}
+                    href={(p.link as {href: string; label: string}).href}
                     className="self-start text-sm font-semibold underline underline-offset-2 transition-opacity hover:opacity-70"
                     style={{ color: '#F59E0B' }}
                   >
-                    {p.link.label}
+                    {(p.link as {href: string; label: string}).label}
                   </a>
                 )}
               </div>
