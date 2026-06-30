@@ -210,7 +210,7 @@ export default function CVPage() {
             >
               {'image' in p && p.image && (
                 <div className="w-full overflow-hidden rounded-t-3xl" style={{ maxHeight: '220px', background: '#FFF3E0' }}>
-                  <img src={p.image} alt={p.title} className="w-full object-cover object-top" style={{ maxHeight: '220px', display: 'block' }} />
+                  <img src={p.image} alt={p.title} className="w-full object-contain" style={{ display: 'block' }} />
                 </div>
               )}
               {'video' in p && p.video && (
