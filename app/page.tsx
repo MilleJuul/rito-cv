@@ -2,51 +2,85 @@
 
 import { useEffect, useRef } from 'react'
 
+const THREAD_LENGTH = 5200
+
 export default function CVPage() {
   const threadRef = useRef<SVGPathElement>(null)
 
   useEffect(() => {
+    // Start slightly revealed so user sees the thread immediately
+    if (threadRef.current) {
+      threadRef.current.style.strokeDashoffset = String(THREAD_LENGTH * 0.92)
+    }
     const handleScroll = () => {
       if (!threadRef.current) return
       const scrolled = window.scrollY
       const total = document.body.scrollHeight - window.innerHeight
       const progress = Math.min(scrolled / total, 1)
-      threadRef.current.style.strokeDashoffset = String(4000 - progress * 4000)
+      threadRef.current.style.strokeDashoffset = String(THREAD_LENGTH * (1 - progress))
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <div className="min-h-screen font-sans" style={{ background: '#FFF8F2', color: '#1a1a1a' }}>
-      {/* SVG Thread overlay */}
+    <div className="relative min-h-screen font-sans" style={{ background: '#FFF8F2', color: '#1a1a1a' }}>
+      {/* SVG Thread — absolute, sits in page flow, scrolls with content */}
       <svg
-        className="fixed inset-0 pointer-events-none z-10"
-        width="100%"
-        height="100%"
-        viewBox="0 0 1200 4000"
+        aria-hidden="true"
+        className="pointer-events-none"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+        }}
+        viewBox="0 0 1200 5000"
         preserveAspectRatio="xMidYMin meet"
-        style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
       >
+        {/* Shadow/glow layer */}
         <path
-          ref={threadRef}
-          d="M 600 120
-             C 600 300, 900 350, 900 500
-             C 900 650, 300 700, 300 900
-             C 300 1100, 700 1150, 700 1300
-             C 700 1450, 400 1500, 400 1650
-             C 400 1800, 800 1850, 800 2000
-             C 800 2150, 350 2200, 350 2350
-             C 350 2500, 750 2550, 750 2700
-             C 750 2850, 500 2900, 500 3050
-             C 500 3200, 700 3250, 700 3400"
+          d="M 600 80
+             C 580 200, 820 280, 850 440
+             C 880 600, 200 660, 180 860
+             C 160 1060, 780 1100, 800 1280
+             C 820 1460, 260 1520, 240 1700
+             C 220 1880, 820 1940, 840 2120
+             C 860 2300, 200 2360, 180 2540
+             C 160 2720, 860 2780, 840 2960
+             C 820 3140, 240 3200, 220 3380
+             C 200 3560, 820 3620, 800 3800
+             C 780 3980, 400 4020, 380 4200"
           fill="none"
           stroke="#F59E0B"
-          strokeWidth="2.5"
+          strokeWidth="12"
           strokeLinecap="round"
-          strokeDasharray="4000"
-          strokeDashoffset="4000"
-          opacity="0.5"
+          opacity="0.12"
+        />
+        {/* Main thread */}
+        <path
+          ref={threadRef}
+          d="M 600 80
+             C 580 200, 820 280, 850 440
+             C 880 600, 200 660, 180 860
+             C 160 1060, 780 1100, 800 1280
+             C 820 1460, 260 1520, 240 1700
+             C 220 1880, 820 1940, 840 2120
+             C 860 2300, 200 2360, 180 2540
+             C 160 2720, 860 2780, 840 2960
+             C 820 3140, 240 3200, 220 3380
+             C 200 3560, 820 3620, 800 3800
+             C 780 3980, 400 4020, 380 4200"
+          fill="none"
+          stroke="#F59E0B"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeDasharray={THREAD_LENGTH}
+          strokeDashoffset={THREAD_LENGTH}
+          opacity="0.85"
+          style={{ transition: 'stroke-dashoffset 0.05s linear' }}
         />
       </svg>
 
