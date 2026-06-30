@@ -134,10 +134,10 @@ export default function CVPage() {
             Jeg vil strikke<br />
             Ritos digitale<br />
             fremtid med{' '}
-            <span style={{ color: '#F59E0B', fontStyle: 'italic' }}>AI-<br />magi</span>
+            <span style={{ color: '#F59E0B', fontStyle: 'italic' }}>AI</span>
           </h1>
           <p className="text-lg mb-8 leading-relaxed" style={{ color: '#555', maxWidth: '420px' }}>
-            Kreativitet og data er mine to pinde. Jeg transformerer komplekse workflows til sømløse oplevelser, der skalerer Ritos succes.
+            Kreativitet og data er mine to pinde. Jeg transformerer komplekse workflows til sømløse oplevelser.
           </p>
           <div className="flex gap-4 flex-wrap">
             <a
