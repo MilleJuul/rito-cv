@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-static'
+
 
 // Thread path: starts at yarn ball (right), sweeps to text (left), drops to next section, repeats
 // Coordinates map to viewBox 1200×5500 which covers the full page height
