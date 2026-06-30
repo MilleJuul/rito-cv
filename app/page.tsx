@@ -2,22 +2,50 @@
 
 import { useEffect, useRef } from 'react'
 
-const THREAD_LENGTH = 5200
+// Thread path: starts at yarn ball (right), sweeps to text (left), drops to next section, repeats
+// Coordinates map to viewBox 1200×5500 which covers the full page height
+const THREAD_PATH = `
+  M 870 340
+  C 870 340, 760 380, 580 420
+  C 400 460, 160 460, 120 520
+  C 80  580, 200 700, 600 760
+  C 800 790, 1050 830, 1060 890
+  C 1070 950, 900 1020, 600 1060
+  C 300 1100, 80  1120, 60  1180
+  C 40  1240, 300 1340, 600 1380
+  C 900 1420, 1100 1440, 1100 1500
+  C 1100 1560, 860 1600, 600 1620
+  C 340 1640, 80  1650, 60  1720
+  C 40  1790, 300 1900, 600 1940
+  C 900 1980, 1080 2000, 1080 2070
+  C 1080 2140, 860 2180, 600 2210
+  C 340 2240, 80  2260, 60  2340
+  C 40  2420, 300 2540, 600 2580
+  C 900 2620, 1060 2640, 1060 2710
+  C 1060 2780, 800 2820, 600 2860
+  C 400 2900, 160 2930, 120 3010
+  C 80  3090, 300 3200, 600 3240
+  C 900 3280, 1040 3300, 1040 3370
+  C 1040 3440, 800 3480, 600 3520
+`
+
+const THREAD_LENGTH = 6500
 
 export default function CVPage() {
   const threadRef = useRef<SVGPathElement>(null)
+  const glowRef = useRef<SVGPathElement>(null)
 
   useEffect(() => {
-    // Start slightly revealed so user sees the thread immediately
-    if (threadRef.current) {
-      threadRef.current.style.strokeDashoffset = String(THREAD_LENGTH * 0.92)
+    const update = (progress: number) => {
+      const offset = THREAD_LENGTH * (1 - progress)
+      if (threadRef.current) threadRef.current.style.strokeDashoffset = String(offset)
+      if (glowRef.current) glowRef.current.style.strokeDashoffset = String(offset)
     }
+    update(0.04)
     const handleScroll = () => {
-      if (!threadRef.current) return
       const scrolled = window.scrollY
       const total = document.body.scrollHeight - window.innerHeight
-      const progress = Math.min(scrolled / total, 1)
-      threadRef.current.style.strokeDashoffset = String(THREAD_LENGTH * (1 - progress))
+      update(Math.min(scrolled / total, 1))
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -25,58 +53,36 @@ export default function CVPage() {
 
   return (
     <div className="relative min-h-screen font-sans" style={{ background: '#FFF8F2', color: '#1a1a1a' }}>
-      {/* SVG Thread — absolute, sits in page flow, scrolls with content */}
+      {/* SVG Thread — absolute, scrolls with the page */}
       <svg
         aria-hidden="true"
         className="pointer-events-none"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 1,
-        }}
-        viewBox="0 0 1200 5000"
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}
+        viewBox="0 0 1200 5500"
         preserveAspectRatio="xMidYMin meet"
       >
-        {/* Shadow/glow layer */}
+        {/* Glow / shadow */}
         <path
-          d="M 600 80
-             C 580 200, 820 280, 850 440
-             C 880 600, 200 660, 180 860
-             C 160 1060, 780 1100, 800 1280
-             C 820 1460, 260 1520, 240 1700
-             C 220 1880, 820 1940, 840 2120
-             C 860 2300, 200 2360, 180 2540
-             C 160 2720, 860 2780, 840 2960
-             C 820 3140, 240 3200, 220 3380
-             C 200 3560, 820 3620, 800 3800
-             C 780 3980, 400 4020, 380 4200"
+          ref={glowRef}
+          d={THREAD_PATH}
           fill="none"
           stroke="#F59E0B"
-          strokeWidth="12"
+          strokeWidth="14"
           strokeLinecap="round"
-          opacity="0.12"
+          strokeLinejoin="round"
+          strokeDasharray={THREAD_LENGTH}
+          strokeDashoffset={THREAD_LENGTH}
+          opacity="0.15"
         />
         {/* Main thread */}
         <path
           ref={threadRef}
-          d="M 600 80
-             C 580 200, 820 280, 850 440
-             C 880 600, 200 660, 180 860
-             C 160 1060, 780 1100, 800 1280
-             C 820 1460, 260 1520, 240 1700
-             C 220 1880, 820 1940, 840 2120
-             C 860 2300, 200 2360, 180 2540
-             C 160 2720, 860 2780, 840 2960
-             C 820 3140, 240 3200, 220 3380
-             C 200 3560, 820 3620, 800 3800
-             C 780 3980, 400 4020, 380 4200"
+          d={THREAD_PATH}
           fill="none"
           stroke="#F59E0B"
-          strokeWidth="5"
+          strokeWidth="4"
           strokeLinecap="round"
+          strokeLinejoin="round"
           strokeDasharray={THREAD_LENGTH}
           strokeDashoffset={THREAD_LENGTH}
           opacity="0.85"
