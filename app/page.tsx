@@ -213,13 +213,6 @@ export default function CVPage() {
                   <img src={p.image} alt={p.title} className="w-full object-contain" style={{ display: 'block' }} />
                 </div>
               )}
-              {'video' in p && p.video && (
-                <div className="w-full overflow-hidden rounded-t-3xl" style={{ background: '#FFF3E0' }}>
-                  <video controls playsInline className="w-full" style={{ display: 'block', maxHeight: '220px' }}>
-                    <source src={p.video} type="video/mp4" />
-                  </video>
-                </div>
-              )}
               <div className="p-8 flex flex-col gap-4 flex-1">
                 <div className="self-start">
                   <span
@@ -229,7 +222,7 @@ export default function CVPage() {
                     {p.tag}
                   </span>
                 </div>
-                {!('image' in p && p.image) && !('video' in p && p.video) && (
+                {!('image' in p && p.image) && (
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center"
                     style={{ background: '#FFF3E0' }}
