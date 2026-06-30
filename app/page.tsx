@@ -29,20 +29,30 @@ export default function CVPage() {
     <div className="relative min-h-screen font-sans" style={{ background: '#FFF8F2', color: '#1a1a1a' }}>
       <style>{`
         @keyframes draw-thread {
-          from { stroke-dashoffset: ${THREAD_LENGTH}; }
-          to   { stroke-dashoffset: 0; }
+          0%   { stroke-dashoffset: ${THREAD_LENGTH}; opacity: 0; }
+          5%   { opacity: 1; }
+          70%  { stroke-dashoffset: 0; opacity: 0.75; }
+          85%  { stroke-dashoffset: 0; opacity: 0.75; }
+          100% { stroke-dashoffset: 0; opacity: 0; }
+        }
+        @keyframes draw-glow {
+          0%   { stroke-dashoffset: ${THREAD_LENGTH}; opacity: 0; }
+          5%   { opacity: 0.15; }
+          70%  { stroke-dashoffset: 0; opacity: 0.12; }
+          85%  { stroke-dashoffset: 0; opacity: 0.12; }
+          100% { stroke-dashoffset: 0; opacity: 0; }
         }
         .thread-draw {
           stroke-dasharray: ${THREAD_LENGTH};
           stroke-dashoffset: ${THREAD_LENGTH};
-          animation: draw-thread 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 0.3s;
+          animation: draw-thread 9s cubic-bezier(0.25, 0, 0.6, 1) forwards;
+          animation-delay: 0.5s;
         }
         .thread-glow {
           stroke-dasharray: ${THREAD_LENGTH};
           stroke-dashoffset: ${THREAD_LENGTH};
-          animation: draw-thread 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 0.3s;
+          animation: draw-glow 9s cubic-bezier(0.25, 0, 0.6, 1) forwards;
+          animation-delay: 0.5s;
         }
       `}</style>
 
