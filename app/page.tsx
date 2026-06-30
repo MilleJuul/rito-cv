@@ -4,28 +4,22 @@
 // Thread path: starts at yarn ball (right), sweeps to text (left), drops to next section, repeats
 // Coordinates map to viewBox 1200×5500 which covers the full page height
 const THREAD_PATH = `
-  M 870 340
-  C 870 340, 760 380, 580 420
-  C 400 460, 160 460, 120 520
-  C 80  580, 200 700, 600 760
-  C 800 790, 1050 830, 1060 890
-  C 1070 950, 900 1020, 600 1060
-  C 300 1100, 80  1120, 60  1180
-  C 40  1240, 300 1340, 600 1380
-  C 900 1420, 1100 1440, 1100 1500
-  C 1100 1560, 860 1600, 600 1620
-  C 340 1640, 80  1650, 60  1720
-  C 40  1790, 300 1900, 600 1940
-  C 900 1980, 1080 2000, 1080 2070
-  C 1080 2140, 860 2180, 600 2210
-  C 340 2240, 80  2260, 60  2340
-  C 40  2420, 300 2540, 600 2580
-  C 900 2620, 1060 2640, 1060 2710
-  C 1060 2780, 800 2820, 600 2860
-  C 400 2900, 160 2930, 120 3010
-  C 80  3090, 300 3200, 600 3240
-  C 900 3280, 1040 3300, 1040 3370
-  C 1040 3440, 800 3480, 600 3520
+  M 1050 300
+  C 900 380, 600 400, 200 480
+  C -20 530, 20 700, 300 780
+  C 600 860, 1150 880, 1180 980
+  C 1210 1080, 900 1140, 500 1200
+  C 100 1260, -30 1380, 100 1480
+  C 230 1580, 700 1600, 1100 1660
+  C 1200 1680, 1220 1800, 1000 1880
+  C 800 1960, 300 1980, 40 2060
+  C -20 2140, 100 2280, 400 2360
+  C 700 2440, 1150 2460, 1180 2560
+  C 1210 2660, 900 2720, 500 2780
+  C 100 2840, -20 2960, 200 3060
+  C 400 3160, 900 3180, 1100 3260
+  C 1180 3300, 1180 3420, 900 3500
+  C 600 3580, 200 3600, 100 3680
 `
 
 const THREAD_LENGTH = 6500
@@ -56,7 +50,7 @@ export default function CVPage() {
       <svg
         aria-hidden="true"
         className="pointer-events-none"
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}
         viewBox="0 0 1200 5500"
         preserveAspectRatio="xMidYMin meet"
       >
@@ -66,10 +60,10 @@ export default function CVPage() {
           d={THREAD_PATH}
           fill="none"
           stroke="#F59E0B"
-          strokeWidth="14"
+          strokeWidth="8"
           strokeLinecap="round"
           strokeLinejoin="round"
-          opacity="0.18"
+          opacity="0.1"
         />
         {/* Main thread */}
         <path
@@ -77,10 +71,10 @@ export default function CVPage() {
           d={THREAD_PATH}
           fill="none"
           stroke="#F59E0B"
-          strokeWidth="4.5"
+          strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          opacity="0.9"
+          opacity="0.7"
         />
       </svg>
 
