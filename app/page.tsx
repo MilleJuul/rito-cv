@@ -30,16 +30,16 @@ export default function CVPage() {
       <style>{`
         @keyframes draw-thread {
           0%   { stroke-dashoffset: ${THREAD_LENGTH}; opacity: 0; }
-          5%   { opacity: 1; }
-          70%  { stroke-dashoffset: 0; opacity: 0.75; }
-          85%  { stroke-dashoffset: 0; opacity: 0.75; }
+          5%   { opacity: 0.3; }
+          70%  { stroke-dashoffset: 0; opacity: 0.3; }
+          85%  { stroke-dashoffset: 0; opacity: 0.3; }
           100% { stroke-dashoffset: 0; opacity: 0; }
         }
         @keyframes draw-glow {
           0%   { stroke-dashoffset: ${THREAD_LENGTH}; opacity: 0; }
-          5%   { opacity: 0.15; }
-          70%  { stroke-dashoffset: 0; opacity: 0.12; }
-          85%  { stroke-dashoffset: 0; opacity: 0.12; }
+          5%   { opacity: 0.08; }
+          70%  { stroke-dashoffset: 0; opacity: 0.06; }
+          85%  { stroke-dashoffset: 0; opacity: 0.06; }
           100% { stroke-dashoffset: 0; opacity: 0; }
         }
         .thread-draw {
@@ -60,7 +60,7 @@ export default function CVPage() {
       <svg
         aria-hidden="true"
         className="pointer-events-none"
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
         viewBox="0 0 1200 5500"
         preserveAspectRatio="xMidYMin meet"
       >
