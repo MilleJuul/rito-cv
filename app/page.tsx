@@ -4,22 +4,22 @@
 // Thread path: starts at yarn ball (right), sweeps to text (left), drops to next section, repeats
 // Coordinates map to viewBox 1200×5500 which covers the full page height
 const THREAD_PATH = `
-  M 1400 280
-  C 1100 340, 700 380, 300 440
-  C -100 500, -150 660, 200 740
-  C 550 820, 1100 840, 1350 940
-  C 1500 1000, 1400 1120, 1000 1180
-  C 600 1240, -100 1260, -150 1380
-  C -200 1500, 400 1560, 900 1620
-  C 1350 1680, 1500 1800, 1200 1900
-  C 900 2000, 200 2020, -150 2120
-  C -300 2200, 100 2340, 600 2400
-  C 1100 2460, 1500 2480, 1450 2600
-  C 1400 2720, 800 2760, 200 2820
-  C -200 2870, -250 3000, 200 3080
-  C 650 3160, 1300 3180, 1450 3300
-  C 1500 3380, 1200 3480, 700 3540
-  C 200 3600, -200 3620, -250 3720
+  M 1600 260
+  C 1200 320, 600 360, 100 440
+  C -300 510, -350 680, 100 760
+  C 550 840, 1300 860, 1600 980
+  C 1750 1040, 1650 1180, 1100 1240
+  C 550 1300, -250 1320, -350 1460
+  C -450 1600, 300 1660, 950 1720
+  C 1600 1780, 1800 1920, 1400 2020
+  C 1000 2120, 100 2140, -350 2260
+  C -500 2340, 0 2500, 600 2560
+  C 1200 2620, 1750 2640, 1700 2780
+  C 1650 2900, 900 2940, 100 3000
+  C -400 3050, -450 3200, 100 3280
+  C 650 3360, 1500 3380, 1650 3520
+  C 1750 3600, 1400 3700, 700 3760
+  C 0 3820, -400 3840, -450 3960
 `
 
 const THREAD_LENGTH = 6500
@@ -45,13 +45,13 @@ export default function CVPage() {
         .thread-draw {
           stroke-dasharray: ${THREAD_LENGTH};
           stroke-dashoffset: ${THREAD_LENGTH};
-          animation: draw-thread 9s cubic-bezier(0.25, 0, 0.6, 1) forwards;
+          animation: draw-thread 18s cubic-bezier(0.2, 0, 0.5, 1) forwards;
           animation-delay: 0.5s;
         }
         .thread-glow {
           stroke-dasharray: ${THREAD_LENGTH};
           stroke-dashoffset: ${THREAD_LENGTH};
-          animation: draw-glow 9s cubic-bezier(0.25, 0, 0.6, 1) forwards;
+          animation: draw-glow 18s cubic-bezier(0.2, 0, 0.5, 1) forwards;
           animation-delay: 0.5s;
         }
       `}</style>
