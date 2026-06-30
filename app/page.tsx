@@ -205,34 +205,48 @@ export default function CVPage() {
           {projects.map((p) => (
             <div
               key={p.title}
-              className="rounded-3xl p-8 flex flex-col gap-4 transition-all hover:-translate-y-1 hover:shadow-lg"
+              className="rounded-3xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg"
               style={{ background: '#FFF8F2', border: '1px solid #F3E8D8' }}
             >
-              <div className="self-start">
-                <span
-                  className="px-3 py-1 rounded-full text-xs font-bold tracking-widest"
-                  style={{ background: '#F59E0B', color: 'white' }}
-                >
-                  {p.tag}
-                </span>
-              </div>
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                style={{ background: '#FFF3E0' }}
-              >
-                {p.icon}
-              </div>
-              <h3 className="text-xl font-bold" style={{ color: '#1a1a1a' }}>{p.title}</h3>
-              <p className="text-sm leading-relaxed flex-1" style={{ color: '#666' }}>{p.desc}</p>
-              {p.link && (
-                <a
-                  href={p.link.href}
-                  className="self-start text-sm font-semibold underline underline-offset-2 transition-opacity hover:opacity-70"
-                  style={{ color: '#F59E0B' }}
-                >
-                  {p.link.label}
-                </a>
+              {'image' in p && p.image && (
+                <div className="w-full overflow-hidden" style={{ maxHeight: '220px', background: '#1a1a2e' }}>
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full object-cover object-top"
+                    style={{ maxHeight: '220px' }}
+                  />
+                </div>
               )}
+              <div className="p-8 flex flex-col gap-4 flex-1">
+                <div className="self-start">
+                  <span
+                    className="px-3 py-1 rounded-full text-xs font-bold tracking-widest"
+                    style={{ background: '#F59E0B', color: 'white' }}
+                  >
+                    {p.tag}
+                  </span>
+                </div>
+                {!('image' in p && p.image) && (
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                    style={{ background: '#FFF3E0' }}
+                  >
+                    {p.icon}
+                  </div>
+                )}
+                <h3 className="text-xl font-bold" style={{ color: '#1a1a1a' }}>{p.title}</h3>
+                <p className="text-sm leading-relaxed flex-1" style={{ color: '#666' }}>{p.desc}</p>
+                {p.link && (
+                  <a
+                    href={p.link.href}
+                    className="self-start text-sm font-semibold underline underline-offset-2 transition-opacity hover:opacity-70"
+                    style={{ color: '#F59E0B' }}
+                  >
+                    {p.link.label}
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -444,6 +458,7 @@ const projects = [
     title: 'Ambassador Gamification',
     desc: 'App der øger ambassadørernes LinkedIn-engagement ved at lade dem optjene point, konkurrere på en rangliste og vinde belønninger — motiverer konsistent aktivitet.',
     link: { label: 'Se demo her', href: '#' },
+    image: '/gamification.png',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <path d="M15 4l2.5 7H25l-6 4.5 2.5 7L15 19l-6.5 3.5 2.5-7L5 11h7.5z" stroke="#F59E0B" strokeWidth="2" strokeLinejoin="round" fill="none" />
