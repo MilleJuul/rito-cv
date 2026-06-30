@@ -201,7 +201,7 @@ export default function CVPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p) => (
             <div
               key={p.title}
@@ -223,7 +223,16 @@ export default function CVPage() {
                 {p.icon}
               </div>
               <h3 className="text-xl font-bold" style={{ color: '#1a1a1a' }}>{p.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#666' }}>{p.desc}</p>
+              <p className="text-sm leading-relaxed flex-1" style={{ color: '#666' }}>{p.desc}</p>
+              {p.link && (
+                <a
+                  href={p.link.href}
+                  className="self-start text-sm font-semibold underline underline-offset-2 transition-opacity hover:opacity-70"
+                  style={{ color: '#F59E0B' }}
+                >
+                  {p.link.label}
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -378,6 +387,7 @@ const projects = [
     tag: 'AUTOMATISERING',
     title: 'Automatiseret Rapportering',
     desc: 'Jeg har transformeret tung manuel rapportering fra en proces på 2-5 dage pr. land til et fuldt automatiseret setup på tværs af 7 forskellige lande. Data flyder nu direkte ind i beslutningsgrundlaget uden forsinkelse.',
+    link: null,
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <path d="M5 20 L10 14 L16 18 L22 8 L27 12" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -390,6 +400,7 @@ const projects = [
     tag: 'SALES INTELLIGENCE',
     title: 'Lead Enrichment Tool',
     desc: 'Udvikling af et værktøj, hvor indtastning af et firmanavn automatisk genererer en dybdegående rapport inkl. LinkedIn-profiler og strategiske indsigter. Dette bruges aktivt af 7 sælgere til at personliggøre deres outreach.',
+    link: null,
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <circle cx="12" cy="11" r="5" stroke="#F59E0B" strokeWidth="2" />
@@ -404,11 +415,38 @@ const projects = [
     tag: 'AI WORKFLOW',
     title: 'AI Katalogproduktion',
     desc: 'Ved at udnytte Claude og Claude Code har jeg reduceret produktionstiden for komplette produktkataloger fra flere måneder til under 30 minutter. En revolutionerende optimering af det kreative indholdsarbejde.',
+    link: null,
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <rect x="5" y="3" width="20" height="24" rx="2" stroke="#F59E0B" strokeWidth="2" />
         <path d="M9 9h12M9 13h12M9 17h8" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
         <path d="M9 21h5" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    tag: 'CONTENT AI',
+    title: 'Post Creator',
+    desc: 'Genererer en ugeplan med LinkedIn-posts for hver ambassadør — baseret på deres tone of voice, billedegalleri, egne filer og læring fra tidligere posts.',
+    link: { label: 'Se Demo', href: '#' },
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect x="3" y="5" width="24" height="18" rx="2" stroke="#F59E0B" strokeWidth="2" />
+        <path d="M3 10h24" stroke="#F59E0B" strokeWidth="1.5" />
+        <circle cx="7" cy="7.5" r="1" fill="#F59E0B" />
+        <circle cx="11" cy="7.5" r="1" fill="#F59E0B" />
+        <path d="M8 15h14M8 19h8" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    tag: 'GAMIFICATION',
+    title: 'Ambassador Gamification',
+    desc: 'App der øger ambassadørernes LinkedIn-engagement ved at lade dem optjene point, konkurrere på en rangliste og vinde belønninger — motiverer konsistent aktivitet.',
+    link: { label: 'Se demo her', href: '#' },
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 4l2.5 7H25l-6 4.5 2.5 7L15 19l-6.5 3.5 2.5-7L5 11h7.5z" stroke="#F59E0B" strokeWidth="2" strokeLinejoin="round" fill="none" />
       </svg>
     ),
   },
