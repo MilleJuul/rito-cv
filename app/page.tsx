@@ -209,13 +209,15 @@ export default function CVPage() {
               style={{ background: '#FFF8F2', border: '1px solid #F3E8D8' }}
             >
               {'image' in p && p.image && (
-                <div className="w-full overflow-hidden" style={{ maxHeight: '220px', background: '#1a1a2e' }}>
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-full object-cover object-top"
-                    style={{ maxHeight: '220px' }}
-                  />
+                <div className="w-full overflow-hidden rounded-t-3xl" style={{ maxHeight: '220px', background: '#111' }}>
+                  <img src={p.image} alt={p.title} className="w-full object-cover object-top" style={{ maxHeight: '220px' }} />
+                </div>
+              )}
+              {'video' in p && p.video && (
+                <div className="w-full overflow-hidden rounded-t-3xl" style={{ maxHeight: '220px', background: '#111' }}>
+                  <video autoPlay loop muted playsInline className="w-full object-cover object-top" style={{ maxHeight: '220px' }}>
+                    <source src={p.video} type="video/mp4" />
+                  </video>
                 </div>
               )}
               <div className="p-8 flex flex-col gap-4 flex-1">
@@ -227,7 +229,7 @@ export default function CVPage() {
                     {p.tag}
                   </span>
                 </div>
-                {!('image' in p && p.image) && (
+                {!('image' in p && p.image) && !('video' in p && p.video) && (
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center"
                     style={{ background: '#FFF3E0' }}
@@ -402,6 +404,7 @@ const projects = [
     title: 'Automatiseret Rapportering',
     desc: 'Jeg har transformeret tung manuel rapportering fra en proces på 2-5 dage pr. land til et fuldt automatiseret setup på tværs af 7 forskellige lande. Data flyder nu direkte ind i beslutningsgrundlaget uden forsinkelse.',
     link: null,
+    image: '/q-report.gif',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <path d="M5 20 L10 14 L16 18 L22 8 L27 12" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -415,6 +418,7 @@ const projects = [
     title: 'Lead Enrichment Tool',
     desc: 'Udvikling af et værktøj, hvor indtastning af et firmanavn automatisk genererer en dybdegående rapport inkl. LinkedIn-profiler og strategiske indsigter. Dette bruges aktivt af 7 sælgere til at personliggøre deres outreach.',
     link: null,
+    video: '/lead enrichment.mp4',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <circle cx="12" cy="11" r="5" stroke="#F59E0B" strokeWidth="2" />
@@ -430,6 +434,7 @@ const projects = [
     title: 'AI Katalogproduktion',
     desc: 'Ved at udnytte Claude og Claude Code har jeg reduceret produktionstiden for komplette produktkataloger fra flere måneder til under 30 minutter. En revolutionerende optimering af det kreative indholdsarbejde.',
     link: null,
+    image: '/catalog.gif',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <rect x="5" y="3" width="20" height="24" rx="2" stroke="#F59E0B" strokeWidth="2" />
@@ -458,7 +463,7 @@ const projects = [
     title: 'Ambassador Gamification',
     desc: 'App der øger ambassadørernes LinkedIn-engagement ved at lade dem optjene point, konkurrere på en rangliste og vinde belønninger — motiverer konsistent aktivitet.',
     link: { label: 'Se demo her', href: '#' },
-    image: '/gamification.png',
+    image: '/gamification.gif',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <path d="M15 4l2.5 7H25l-6 4.5 2.5 7L15 19l-6.5 3.5 2.5-7L5 11h7.5z" stroke="#F59E0B" strokeWidth="2" strokeLinejoin="round" fill="none" />
