@@ -60,7 +60,7 @@ export default function CVPage() {
       <svg
         aria-hidden="true"
         className="pointer-events-none"
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}
         viewBox="0 0 1200 5500"
         preserveAspectRatio="xMidYMin meet"
       >
@@ -87,6 +87,9 @@ export default function CVPage() {
           opacity="0.7"
         />
       </svg>
+
+      {/* All content sits above the thread */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
 
       {/* NAVBAR */}
       <nav
@@ -331,6 +334,8 @@ export default function CVPage() {
       <footer className="py-8 text-center text-sm" style={{ color: '#aaa', borderTop: '1px solid #F3E8D8' }}>
         © 2025 · Mille Juul Nielsen · Marketing Automation Specialist
       </footer>
+
+      </div>{/* end content wrapper */}
     </div>
   )
 }
