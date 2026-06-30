@@ -208,7 +208,7 @@ export default function CVPage() {
               className="rounded-3xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg"
               style={{ background: '#FFF8F2', border: '1px solid #F3E8D8' }}
             >
-              {'image' in p && p.image && (
+              {p.image && (
                 <div className="w-full overflow-hidden rounded-t-3xl" style={{ background: '#FFF3E0' }}>
                   <img src={p.image} alt={p.title} className="w-full object-contain" style={{ display: 'block', maxHeight: '220px' }} />
                 </div>
@@ -222,7 +222,7 @@ export default function CVPage() {
                     {p.tag}
                   </span>
                 </div>
-                {!('image' in p && p.image) && (
+                {!p.image && (
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center"
                     style={{ background: '#FFF3E0' }}
@@ -232,13 +232,13 @@ export default function CVPage() {
                 )}
                 <h3 className="text-xl font-bold" style={{ color: '#1a1a1a' }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed flex-1" style={{ color: '#666' }}>{p.desc}</p>
-                {'link' in p && p.link && (
+                {p.link && (
                   <a
-                    href={(p.link as {href: string; label: string}).href}
+                    href={p.link.href}
                     className="self-start text-sm font-semibold underline underline-offset-2 transition-opacity hover:opacity-70"
                     style={{ color: '#F59E0B' }}
                   >
-                    {(p.link as {href: string; label: string}).label}
+                    {p.link.label}
                   </a>
                 )}
               </div>
@@ -391,7 +391,16 @@ function YarnIllustration() {
   )
 }
 
-const projects = [
+type Project = {
+  tag: string
+  title: string
+  desc: string
+  icon: React.ReactNode
+  image?: string
+  link?: { label: string; href: string }
+}
+
+const projects: Project[] = [
   {
     tag: 'AUTOMATISERING',
     title: 'Automatiseret Rapportering',
