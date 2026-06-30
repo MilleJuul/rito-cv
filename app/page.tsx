@@ -209,7 +209,7 @@ export default function CVPage() {
               style={{ background: '#FFF8F2', border: '1px solid #F3E8D8' }}
             >
               {'image' in p && p.image && (
-                <div className="w-full overflow-hidden rounded-t-3xl" style={{ maxHeight: '220px', background: '#FFF3E0' }}>
+                <div className="w-full overflow-hidden rounded-t-3xl" style={{ background: '#FFF3E0' }}>
                   <img src={p.image} alt={p.title} className="w-full object-contain" style={{ display: 'block' }} />
                 </div>
               )}
@@ -462,7 +462,6 @@ const projects = [
     tag: 'GAMIFICATION',
     title: 'Ambassador Gamification',
     desc: 'App der øger ambassadørernes LinkedIn-engagement ved at lade dem optjene point, konkurrere på en rangliste og vinde belønninger — motiverer konsistent aktivitet.',
-    link: { label: 'Se demo her', href: '#' },
     image: '/gamification.gif',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
