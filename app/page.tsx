@@ -440,7 +440,7 @@ const projects = [
     tag: 'CONTENT AI',
     title: 'Post Creator',
     desc: 'Genererer en ugeplan med LinkedIn-posts for hver ambassadør — baseret på deres tone of voice, billedegalleri, egne filer og læring fra tidligere posts.',
-    link: { label: 'Se Demo', href: '#' },
+    image: '/content%20creator.gif',
     icon: (
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
         <rect x="3" y="5" width="24" height="18" rx="2" stroke="#F59E0B" strokeWidth="2" />
