@@ -341,10 +341,6 @@ export default function CVPage() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-8 text-center text-sm" style={{ color: '#aaa', borderTop: '1px solid #F3E8D8' }}>
-        © 2025 · Mille Juul Nielsen · Marketing Automation Specialist
-      </footer>
 
       </div>{/* end content wrapper */}
     </div>
