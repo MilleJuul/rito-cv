@@ -330,7 +330,7 @@ export default function CVPage() {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M2 4l6 4.5L14 4M2 4h12v9H2V4z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            Book en samtale
+            Kontakt mig
           </a>
           <a
             href="#"
