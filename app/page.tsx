@@ -318,7 +318,7 @@ export default function CVPage() {
 
         <div id="kontakt" className="flex justify-center gap-4 flex-wrap">
           <a
-            href="mailto:mil.juul.nielsen@gmail.com"
+            href="mailto:millenielsen@outlook.dk"
             className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white transition-all hover:scale-105 hover:shadow-lg"
             style={{ background: '#F59E0B' }}
           >
