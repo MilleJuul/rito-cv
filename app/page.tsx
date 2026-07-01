@@ -131,7 +131,7 @@ export default function CVPage() {
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M6 1l1.2 2.4L10 4.2l-2 1.9.5 2.7L6 7.5l-2.5 1.3.5-2.7-2-1.9 2.8-.8z" fill="#F59E0B" />
             </svg>
-            Marketing Automation Specialist Pitch
+            Marketing AI & Automation Specialist
           </div>
           <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6" style={{ color: '#1a1a1a' }}>
             Lad os strikke<br />
