@@ -133,13 +133,13 @@ export default function CVPage() {
             Marketing Automation Specialist Pitch
           </div>
           <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6" style={{ color: '#1a1a1a' }}>
-            Jeg vil strikke<br />
+            Lad os strikke<br />
             Ritos digitale<br />
-            fremtid med{' '}
+            fremtid sammen med{' '}
             <span style={{ color: '#F59E0B', fontStyle: 'italic' }}>AI</span>
           </h1>
           <p className="text-lg mb-8 leading-relaxed" style={{ color: '#555', maxWidth: '420px' }}>
-            Kreativitet og data er mine to pinde. Jeg transformerer komplekse workflows til sømløse oplevelser.
+            Kreativitet og data er mine to pinde. Når jeg ser en proces, der tager for lang tid, begynder jeg automatisk at tænke på, hvordan den kan gøres smartere.
           </p>
           <div className="flex gap-4 flex-wrap">
             <a
