@@ -359,30 +359,38 @@ export default function CVPage() {
 function YarnIllustration() {
   return (
     <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Main yarn ball */}
-      <circle cx="110" cy="100" r="75" fill="#F59E0B" opacity="0.15" />
-      <circle cx="110" cy="100" r="68" fill="#F59E0B" opacity="0.9" />
-      {/* Yarn lines */}
-      {[0, 20, 40, 60, 80, 100, 120, 140, 160].map((angle, i) => {
-        const rad = (angle * Math.PI) / 180
-        const x1 = 110 + 68 * Math.cos(rad - 0.5)
-        const y1 = 100 + 68 * Math.sin(rad - 0.5)
-        const x2 = 110 + 68 * Math.cos(rad + 2.1)
-        const y2 = 100 + 68 * Math.sin(rad + 2.1)
-        return (
-          <path
-            key={i}
-            d={`M ${x1} ${y1} Q 110 100 ${x2} ${y2}`}
-            stroke="#FFF3E0"
-            strokeWidth="1.5"
-            opacity="0.4"
-            fill="none"
-          />
-        )
-      })}
-      {/* Tail */}
-      <path d="M 175 115 Q 195 140 185 170 Q 178 185 165 188" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" fill="none" />
-      <path d="M 165 188 Q 150 192 145 200" stroke="#F59E0B" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+      {/* Shadow */}
+      <ellipse cx="112" cy="178" rx="60" ry="10" fill="#F59E0B" opacity="0.15" />
+      {/* Main ball */}
+      <circle cx="110" cy="105" r="72" fill="#F59E0B" />
+      {/* Shading - darker right side */}
+      <circle cx="110" cy="105" r="72" fill="url(#yarnShade)" />
+      {/* Yarn wrap lines - diagonal bands across ball */}
+      <clipPath id="ballClip">
+        <circle cx="110" cy="105" r="72" />
+      </clipPath>
+      <g clipPath="url(#ballClip)">
+        {/* Diagonal stripes simulating yarn wrapping */}
+        {[-80,-60,-40,-20,0,20,40,60,80,100,120,140,160,180,200,220,240,260].map((x, i) => (
+          <line key={i} x1={x} y1="20" x2={x+80} y2="190" stroke="#E8920A" strokeWidth="6" opacity="0.35" />
+        ))}
+        {/* Cross-wrap in other direction */}
+        {[-80,-50,-20,10,40,70,100,130,160,190,220,250].map((x, i) => (
+          <line key={i+20} x1={x+80} y1="20" x2={x} y2="190" stroke="#C97D08" strokeWidth="4" opacity="0.2" />
+        ))}
+        {/* Highlight band */}
+        <ellipse cx="85" cy="75" rx="28" ry="18" fill="white" opacity="0.12" transform="rotate(-20 85 75)" />
+      </g>
+      <defs>
+        <radialGradient id="yarnShade" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="white" stopOpacity="0.15" />
+          <stop offset="60%" stopColor="transparent" stopOpacity="0" />
+          <stop offset="100%" stopColor="#92580A" stopOpacity="0.3" />
+        </radialGradient>
+      </defs>
+      {/* Yarn tail coming off ball */}
+      <path d="M 178 125 Q 200 145 195 168 Q 190 185 175 192 Q 160 198 150 210" stroke="#F59E0B" strokeWidth="5" strokeLinecap="round" fill="none" />
+      <path d="M 150 210 Q 138 218 135 228" stroke="#F59E0B" strokeWidth="4.5" strokeLinecap="round" fill="none" />
     </svg>
   )
 }
