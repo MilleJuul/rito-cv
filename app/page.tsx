@@ -486,7 +486,7 @@ const stats = [
 const values = [
   {
     title: 'Strategisk AI',
-    desc: 'Identificering af de rigtige teknologier til Ritos behov.',
+    desc: 'Jeg starter med problemet – ikke med værktøjet.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="8" stroke="#F59E0B" strokeWidth="1.8" />
@@ -496,7 +496,7 @@ const values = [
   },
   {
     title: 'Sømløs integration',
-    desc: 'Forbindelse af systemer uden at miste den røde tråd.',
+    desc: 'Nye løsninger skal passe ind i hverdagen – ikke skabe mere kompleksitet.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="5" cy="11" r="3" stroke="#F59E0B" strokeWidth="1.8" />
@@ -509,7 +509,7 @@ const values = [
   },
   {
     title: 'Kreativ værdi',
-    desc: 'Teknikken tjener altid den kreative slutbrugeroplevelse.',
+    desc: 'AI skal frigive tid til kreativitet, ikke erstatte den.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="4" stroke="#F59E0B" strokeWidth="1.8" />
@@ -519,7 +519,7 @@ const values = [
   },
   {
     title: 'Skalerbar vækst',
-    desc: 'Løsninger der vokser i takt med Ritos ambitioner.',
+    desc: 'Fra én god idé til værdi i hele organisationen.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path d="M3 15 L8 10 L12 13 L19 5" stroke="#F59E0B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
