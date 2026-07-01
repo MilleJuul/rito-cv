@@ -103,7 +103,7 @@ export default function CVPage() {
             <circle cx="10" cy="10" r="8" stroke="#F59E0B" strokeWidth="2" />
             <path d="M6 10 Q10 6 14 10 Q10 14 6 10Z" fill="#F59E0B" />
           </svg>
-          RITO EXPERT ANSØGER
+          AI projekter
         </div>
         <div className="hidden md:flex items-center gap-10 text-sm font-medium" style={{ color: '#555' }}>
           <a href="#projekter" className="hover:text-amber-500 transition-colors">Projekter</a>
