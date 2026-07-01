@@ -158,7 +158,7 @@ export default function CVPage() {
               className="flex items-center gap-2 px-7 py-4 rounded-full font-semibold transition-all hover:scale-105"
               style={{ border: '2px solid #F59E0B', color: '#F59E0B', background: 'transparent' }}
             >
-              Lær mig at kende
+              Min tilgang
             </a>
           </div>
         </div>
