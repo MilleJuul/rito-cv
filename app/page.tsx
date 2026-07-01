@@ -299,12 +299,7 @@ export default function CVPage() {
               className="w-32 h-32 rounded-3xl overflow-hidden shadow-xl"
               style={{ border: '4px solid white' }}
             >
-              <div
-                className="w-full h-full flex items-center justify-center text-5xl"
-                style={{ background: 'linear-gradient(135deg, #F3E8D8, #FBBF24)' }}
-              >
-                👤
-              </div>
+              <img src="/1520519446809.jpg" alt="Mille Juul Nielsen" className="w-full h-full object-cover" />
             </div>
             <div
               className="absolute -bottom-2 -right-2 w-9 h-9 rounded-xl flex items-center justify-center shadow-md"
