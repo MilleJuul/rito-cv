@@ -319,10 +319,6 @@ export default function CVPage() {
         <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ color: '#1a1a1a' }}>
           Lad os tage en kop kaffe og nørde AI. Eller garn. Eller automatiseringer. Helst alle tre.
         </h2>
-        <p className="text-lg leading-relaxed mb-10 mx-auto" style={{ color: '#666', maxWidth: '560px' }}>
-          Som jeres næste Marketing Automation Specialist bringer jeg ikke kun tekniske færdigheder, men en dyb forståelse for
-          jeres håndværks-univers. Jeg glæder mig til at vise, hvordan vi kan strikke endnu stærkere bånd til jeres kunder.
-        </p>
 
         <div id="kontakt" className="flex justify-center gap-4 flex-wrap">
           <a
