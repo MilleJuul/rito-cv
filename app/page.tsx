@@ -109,14 +109,14 @@ export default function CVPage() {
           <a href="#projekter" className="hover:text-amber-500 transition-colors">Projekter</a>
           <a href="#roed-traad" className="hover:text-amber-500 transition-colors">Den Røde Tråd</a>
           <a href="#vaerdi" className="hover:text-amber-500 transition-colors">Værdi</a>
-          <a href="#om-mig" className="hover:text-amber-500 transition-colors">Om Mig</a>
+          <a href="#om-mig" className="hover:text-amber-500 transition-colors">Om mig</a>
         </div>
         <a
           href="#kontakt"
           className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all hover:scale-105"
           style={{ background: '#F59E0B' }}
         >
-          Kontakt Mig
+          Kontakt mig
         </a>
       </nav>
 
@@ -177,7 +177,7 @@ export default function CVPage() {
               </svg>
             </div>
             <div>
-              <div className="font-bold text-sm" style={{ color: '#1a1a1a' }}>Høj Effektivitet</div>
+              <div className="font-bold text-sm" style={{ color: '#1a1a1a' }}>Høj effektivitet</div>
               <div className="text-xs" style={{ color: '#888' }}>Intelligente løsninger</div>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function CVPage() {
       {/* PROJEKTER */}
       <section id="projekter" className="max-w-7xl mx-auto px-6 py-20">
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-black mb-3" style={{ color: '#1a1a1a' }}>Mine Case-masker til Rito</h2>
+          <h2 className="text-4xl font-black mb-3" style={{ color: '#1a1a1a' }}>Mine case-masker til Rito</h2>
           <p className="text-lg" style={{ color: '#777' }}>
             Konkrete eksempler på hvordan jeg binder teknik og forretningsværdi sammen.
           </p>
@@ -344,7 +344,7 @@ export default function CVPage() {
               <rect x="2" y="1" width="12" height="14" rx="1.5" stroke="#F59E0B" strokeWidth="1.5" />
               <path d="M5 5h6M5 8h6M5 11h4" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
-            Se mit fulde CV
+            Se mit fulde cv
           </a>
         </div>
       </section>
@@ -490,7 +490,7 @@ const values = [
     ),
   },
   {
-    title: 'Sømløs Integration',
+    title: 'Sømløs integration',
     desc: 'Forbindelse af systemer uden at miste den røde tråd.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -503,7 +503,7 @@ const values = [
     ),
   },
   {
-    title: 'Kreativ Værdi',
+    title: 'Kreativ værdi',
     desc: 'Teknikken tjener altid den kreative slutbrugeroplevelse.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -513,7 +513,7 @@ const values = [
     ),
   },
   {
-    title: 'Skalerbar Vækst',
+    title: 'Skalerbar vækst',
     desc: 'Løsninger der vokser i takt med Ritos ambitioner.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
