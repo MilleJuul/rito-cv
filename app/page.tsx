@@ -263,10 +263,9 @@ export default function CVPage() {
       {/* DEN RØDE TRÅD */}
       <section id="roed-traad" className="max-w-7xl mx-auto px-6 py-20">
         <div className="mb-12">
-          <h2 className="text-4xl font-black mb-4" style={{ color: '#1a1a1a' }}>Den Røde Tråd i min tilgang</h2>
+          <h2 className="text-4xl font-black mb-4" style={{ color: '#1a1a1a' }}>Den røde tråd i min tilgang</h2>
           <p className="text-lg leading-relaxed" style={{ color: '#555', maxWidth: '600px' }}>
-            Min ambition er at blive en del af Rito-familien og bidrage med min ekspertise inden for AI og automatisering.
-            Jeg ser ikke bare tal og koder – jeg ser muligheder for at gøre hver kundes kreative rejse endnu bedre.
+            Fælles for alle mine projekter er, at de starter med et problem og ikke med en teknologi. AI er sjældent målet i sig selv. Det interessante er at finde de steder, hvor teknologi kan frigive tid, forbedre oplevelser og skabe værdi for dem, der skal bruge løsningen.
           </p>
         </div>
 
