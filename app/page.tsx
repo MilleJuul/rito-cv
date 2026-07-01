@@ -107,16 +107,17 @@ export default function CVPage() {
         </div>
         <div className="hidden md:flex items-center gap-10 text-sm font-medium" style={{ color: '#555' }}>
           <a href="#projekter" className="hover:text-amber-500 transition-colors">Projekter</a>
-          <a href="#roed-traad" className="hover:text-amber-500 transition-colors">Den Røde Tråd</a>
-          <a href="#vaerdi" className="hover:text-amber-500 transition-colors">Værdi</a>
-          <a href="#om-mig" className="hover:text-amber-500 transition-colors">Om mig</a>
+          <a href="#roed-traad" className="hover:text-amber-500 transition-colors">Den røde tråd</a>
+          <a href="#om-mig" className="hover:text-amber-500 transition-colors">Kontakt</a>
         </div>
         <a
-          href="#kontakt"
+          href="https://www.linkedin.com/in/millejuulnielsen/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all hover:scale-105"
           style={{ background: '#F59E0B' }}
         >
-          Kontakt mig
+          LinkedIn profil
         </a>
       </nav>
 
