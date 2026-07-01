@@ -475,7 +475,7 @@ const projects: Project[] = [
 const stats = [
   { value: '40+', label: 'TIMER SPARET PR. LAND', desc: 'Massiv frigivelse af menneskelige ressourcer' },
   { value: '7', label: 'LANDE AUTOMATISERET', desc: 'Skaléring uden grænser og manuelle fejl' },
-  { value: '<30m', label: 'KATALOGPRODUKTION', desc: 'Fra måneder til minutter med AI-kraft' },
+  { value: '<30m', label: 'KATALOGPRODUKTION', desc: 'Fra måneder til minutter med AI' },
 ]
 
 const values = [
