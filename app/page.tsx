@@ -328,15 +328,18 @@ export default function CVPage() {
             Kontakt mig
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/millejuulnielsen/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-all hover:scale-105"
             style={{ border: '2px solid #F59E0B', color: '#F59E0B' }}
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <rect x="2" y="1" width="12" height="14" rx="1.5" stroke="#F59E0B" strokeWidth="1.5" />
-              <path d="M5 5h6M5 8h6M5 11h4" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
+              <rect x="1" y="1" width="14" height="14" rx="2" stroke="#F59E0B" strokeWidth="1.5" />
+              <path d="M4 6.5v5M4 4.5v.01" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M7.5 11.5V9a1.5 1.5 0 0 1 3 0v2.5M7.5 6.5v5" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            Se mit fulde cv
+            LinkedIn profil
           </a>
         </div>
       </section>
