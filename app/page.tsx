@@ -407,7 +407,7 @@ const projects: Project[] = [
   {
     tag: 'SALES INTELLIGENCE',
     title: 'Lead Enrichment Tool',
-    desc: 'Jeg har udviklet et Lead Intelligence-værktøj, som automatisk genererer en dybdegående rapport, når et firmanavn indtastes. Rapporten samler virksomhedsresearch, LinkedIn-profiler, markedsindsigter og relevante salgsmuligheder, så sælgerne hurtigt kan personalisere deres outreach. Løsningen bruges i dag af syv sælgere og er versioneret til syv forskellige lande. Hele processen er automatiseret via Eloqua, Make.com, Relevance AI, OpenAI, PDF.co og Gmail, hvilket har fjernet behovet for manuelt researcharbejde og reduceret tiden fra nyt lead til færdig salgsindsigt til få minutter.',
+    desc: 'Et leadværktøj som automatisk genererer en dybdegående rapport, når et firmanavn indtastes. Rapporten samler virksomhedsresearch, LinkedIn-profiler, markedsindsigter og relevante salgsmuligheder, så sælgerne hurtigt kan personalisere deres outreach. Løsningen bruges i dag af syv sælgere og er versioneret til syv forskellige lande. Hele processen er automatiseret via Eloqua, Make.com, Relevance AI, OpenAI, PDF.co og Gmail, hvilket har fjernet behovet for manuelt researcharbejde og reduceret tiden fra nyt lead til færdig salgsindsigt til få minutter.',
 
     image: '/lead%20enrichment.png',
     icon: (
