@@ -393,7 +393,7 @@ const projects: Project[] = [
   {
     tag: 'AUTOMATISERING',
     title: 'Automatiseret Rapportering',
-    desc: 'Jeg har transformeret tung manuel rapportering fra en proces på 2-5 dage pr. land til et fuldt automatiseret setup på tværs af 7 forskellige lande. Data flyder nu direkte ind i beslutningsgrundlaget uden forsinkelse. Rapporteringsplatformen er skabt med vibe coding gennem Lovable med integration til AI-værktøjer som OpenAI, Make.com og Apify.',
+    desc: 'Jeg har automatiseret en tidligere tung og manuel rapporteringsproces, der tog 2–5 dage pr. land, til et skalerbart setup på tværs af syv markeder. Data indsamles, behandles og visualiseres nu automatisk, så beslutningstagere får adgang til opdaterede indsigter uden forsinkelser. Rapporteringsplatformen er udviklet med Lovable og integreret med AI- og automatiseringsværktøjer som OpenAI, Make.com og Apify, hvilket har skabt en effektiv, datadrevet løsning med minimal manuel håndtering.',
 
     image: '/q-report.gif',
     icon: (
