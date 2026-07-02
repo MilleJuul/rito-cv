@@ -423,7 +423,7 @@ const projects: Project[] = [
   {
     tag: 'AI WORKFLOW',
     title: 'AI Katalogproduktion',
-    desc: 'Ved at implementere Claude og Claude Code har jeg automatiseret katalogproduktionen og reduceret leveringstiden fra flere måneder til under 30 minutter. Ved at sende varegrupper og varenumre til Claude genereres komplette produktkataloger automatisk med alt fra introduktion og indholdsfortegnelse til guides og produktindhold. Derudover har vi udviklet en intern katalogplatform med Claude Code, hvilket har fjernet afhængigheden af eksterne leverandører og reduceret omkostningerne markant.',
+    desc: 'Ved at implementere Claude Design og Claude Code har jeg automatiseret katalogproduktionen og reduceret leveringstiden fra flere måneder til under 30 minutter. Ved at sende varegrupper og varenumre til Claude genereres komplette produktkataloger automatisk med alt fra introduktion og indholdsfortegnelse til guides og produktindhold. Derudover har vi udviklet en intern katalogplatform med Claude Code, hvilket har fjernet afhængigheden af eksterne leverandører og reduceret omkostningerne markant.',
 
     image: '/catalog.gif',
     icon: (
